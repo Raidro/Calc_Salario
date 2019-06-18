@@ -19,8 +19,8 @@
 
     <EditText
         android:id="@+id/edtSalBruto"
-        android:layout_width="160"
-        android:layout_height="40"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Salario Bruto"
@@ -42,8 +42,8 @@
 
     <EditText
         android:id="@+id/editDep"
-        android:layout_width="160"
-        android:layout_height="40"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Dependentes"
@@ -65,8 +65,8 @@
 
     <EditText
         android:id="@+id/editDescINSS"
-        android:layout_width="160"
-        android:layout_height="40"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Desconto"
@@ -88,8 +88,8 @@
 
     <EditText
         android:id="@+id/edtBaseINSS"
-        android:layout_width="160"
-        android:layout_height="40"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Base INSS"
@@ -111,8 +111,8 @@
 
     <EditText
         android:id="@+id/edtValINSS"
-        android:layout_width="160"
-        android:layout_height="40"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Valor INSS"
@@ -133,8 +133,8 @@
 
     <EditText
         android:id="@+id/edtBaseIRPF"
-        android:layout_width="160"
-        android:layout_height="40"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Base IRPF"
@@ -155,8 +155,8 @@
 
     <EditText
         android:id="@+id/edtAliIRPF"
-        android:layout_width="160"
-        android:layout_height="40"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Aliquota IRPF"
@@ -191,8 +191,8 @@
 
     <EditText
         android:id="@+id/edtDedu"
-        android:layout_width="100"
-        android:layout_height="40"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
@@ -205,8 +205,8 @@
 
     <EditText
         android:id="@+id/edtValIRPF"
-        android:layout_width="100"
-        android:layout_height="40"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Valor IRPF"
@@ -229,8 +229,8 @@
 
     <EditText
         android:id="@+id/edtSalLiqui"
-        android:layout_width="160"
-        android:layout_height="40"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Salario Liquido"
@@ -242,8 +242,8 @@
 
     <Button
         android:id="@+id/btnGraf"
-        android:layout_width="200"
-        android:layout_height="50"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:text="Ver Grafico"
         app:layout_constraintEnd_toEndOf="@+id/edtAliIRPF"

@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     //-----------------
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-
+                qtDep = Double.parseDouble(editable.toString());
+                IRPF();
             }
         });
 
@@ -114,23 +114,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void IRPF(){
+    public void IRPF() {
 
-        BaseIrpf = (SalaBruto - ValorInss -(qtDep * 189.59));
+        BaseIrpf = (SalaBruto - ValorInss - (qtDep * 189.59));
 
-        if (BaseIrpf < 1903.98){
+        if (BaseIrpf < 1903.98) {
             AliqIRPF = 0;
             deduc = 0;
-        } else if(BaseIrpf >1903.98 && BaseIrpf <= 2826.05){
+        } else if (BaseIrpf > 1903.98 && BaseIrpf <= 2826.05) {
             AliqIRPF = 0.075;
             deduc = 142.80;
 
 
-        } else if( BaseIrpf >2836.05 && BaseIrpf <= 3751.05) {
+        } else if (BaseIrpf > 2836.05 && BaseIrpf <= 3751.05) {
             AliqIRPF = 0.15;
             deduc = 354.80;
 
-        } else if (BaseIrpf > 3751.05 && BaseIrpf <= 4664.08){
+        } else if (BaseIrpf > 3751.05 && BaseIrpf <= 4664.08) {
             AliqIRPF = 0.225;
             deduc = 636.13;
         } else {
@@ -143,13 +143,11 @@ public class MainActivity extends AppCompatActivity {
         SalaLiqui = SalaBruto - ValorInss - ValorIRPF; // Valor do Salario Liquido
 
 
-        edtAliIRPF.setText(String.format("%.2f",AliqIRPF));
-        edtBaseIRPF.setText(String.format("%.2f",BaseIrpf));
-        edtValIRPF.setText(String.format("%,2f",ValorIRPF));
-        edtDedu.setText(String.format("%.2f",deduc));
-        edtSalLiqui.setText(String.format("%.2f",SalaLiqui));
-
-
+        edtAliIRPF.setText(String.format("%.2f", AliqIRPF));
+        edtBaseIRPF.setText(String.format("%.2f", BaseIrpf));
+        edtValIRPF.setText(String.format("%,2f", ValorIRPF));
+        edtDedu.setText(String.format("%.2f", deduc));
+        edtSalLiqui.setText(String.format("%.2f", SalaLiqui));
 
 
     }

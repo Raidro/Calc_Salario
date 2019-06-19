@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void AliDescINSS() {
+    public void INSS() {
 
         double SalaBruto = 0;
         double Aliq = 0;

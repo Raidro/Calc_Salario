@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         SalaLiqui = SalaBruto - ValorInss - ValorIRPF; // Valor do Salario Liquido
 
 
-        edtAliIRPF.setText(String.format("%.2f", AliqIRPF));
+        edtAliIRPF.setText(String.format("%.3f", AliqIRPF));
         edtBaseIRPF.setText(String.format("%.2f", BaseIrpf));
         edtValIRPF.setText(String.format("%.2f", ValorIRPF));
         edtDedu.setText(String.format("%.2f", deduc));

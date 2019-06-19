@@ -38,6 +38,39 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void AliDescINSS() {
+
+        double SalaBruto = 0;
+        double Aliq = 0;
+        double BaseInss = 0;
+        double ValorInss = 0;
+
+        if (SalaBruto <= 1751.81) {
+
+            Aliq = 0.08;
+
+
+        } else if (SalaBruto > 1751.81 && SalaBruto <= 2919.72) {
+            Aliq = 0.09;
+
+        } else if (SalaBruto > 5839.45) {
+            Aliq = 0.11;
+        }
+
+        if (SalaBruto > 5839.45) {
+            BaseInss = 5839.45;
+
+
+        } else {
+            BaseInss = SalaBruto;
+        }
+
+
+        ValorInss = Aliq * BaseInss;
+
+
+    }
+
     public void InitComponents() {
         // inicia os componentes criados
 

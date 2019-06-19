@@ -3,6 +3,8 @@ package com.example.calcular_salario;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -16,11 +18,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        InitComponents();
+        edtSalBruto.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
     }
 
-    public void initcomponents() {
-
+    public void InitComponents() {
+        // inicia os componentes criados
 
         edtSalBruto = (EditText) findViewById(R.id.edtSalBruto);
         editDep = (EditText) findViewById(R.id.editDep);

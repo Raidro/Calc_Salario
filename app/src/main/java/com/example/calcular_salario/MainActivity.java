@@ -13,6 +13,11 @@ public class MainActivity extends AppCompatActivity {
     EditText edtSalBruto, editDep, editDescINSS, edtAliIRPF, edtBaseINSS, edtBaseIRPF, edtValINSS, edtValIRPF, edtDedu, edtSalLiqui;
     Button btnGraf;
 
+    double SalaBruto = 0;
+    double Aliq = 0;
+    double BaseInss = 0;
+    double ValorInss = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-
+                SalaBruto = Double.parseDouble(editable.toString());
+                INSS();
             }
         });
 
@@ -40,10 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void INSS() {
 
-        double SalaBruto = 0;
-        double Aliq = 0;
-        double BaseInss = 0;
-        double ValorInss = 0;
 
         // se salario bruto menor ou igual ao valor definido, aliquota será de 8%
         if (SalaBruto <= 1751.81) {
@@ -71,7 +73,13 @@ public class MainActivity extends AppCompatActivity {
         ValorInss = Aliq * BaseInss;
 
 
+        editDescINSS.setText(String.format("%.2f", Aliq));  //mostra na tela o valor da Aliq
+        edtBaseINSS.setText(String.format("%.2f", BaseInss)); // mostra na tela o valor de BaseInss
+        edtValINSS.setText(String.format("%.2f", ValorInss)); // mostra na tela o valor de ValorInss
+
+
     }
+
 
     public void InitComponents() {
         // inicia os componentes criados

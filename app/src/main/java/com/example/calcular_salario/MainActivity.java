@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (SalaBruto > 1751.81 && SalaBruto <= 2919.72) {
             Aliq = 0.09;
             // se não aliquota = a 11%
-        } else if (SalaBruto > 5839.45) {
+        } else if (SalaBruto > 2919.72) {
             Aliq = 0.11;
         }
         //se salario bruto igual ao valor definido, então BI == a esse valor
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
 
         edtAliIRPF.setText(String.format("%.2f", AliqIRPF));
         edtBaseIRPF.setText(String.format("%.2f", BaseIrpf));
-        edtValIRPF.setText(String.format("%,2f", ValorIRPF));
+        edtValIRPF.setText(String.format("%.2f", ValorIRPF));
         edtDedu.setText(String.format("%.2f", deduc));
         edtSalLiqui.setText(String.format("%.2f", SalaLiqui));
 

@@ -45,26 +45,28 @@ public class MainActivity extends AppCompatActivity {
         double BaseInss = 0;
         double ValorInss = 0;
 
+        // se salario bruto menor ou igual ao valor definido, aliquota será de 8%
         if (SalaBruto <= 1751.81) {
 
             Aliq = 0.08;
 
-
+            // se não salario bruto  maior que 1700 e menor que 3000, aliquota será de 9%
         } else if (SalaBruto > 1751.81 && SalaBruto <= 2919.72) {
             Aliq = 0.09;
-
+            // se não aliquota = a 11%
         } else if (SalaBruto > 5839.45) {
             Aliq = 0.11;
         }
-
+        //se salario bruto igual ao valor definido, então BI == a esse valor
         if (SalaBruto > 5839.45) {
             BaseInss = 5839.45;
 
-
+            // se não, BI == SalaBruto
         } else {
             BaseInss = SalaBruto;
         }
 
+        // valor do inss será o calculo entre a aliquota * a base do inss
 
         ValorInss = Aliq * BaseInss;
 

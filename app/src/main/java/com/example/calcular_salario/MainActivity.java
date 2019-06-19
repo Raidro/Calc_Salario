@@ -13,10 +13,22 @@ public class MainActivity extends AppCompatActivity {
     EditText edtSalBruto, editDep, editDescINSS, edtAliIRPF, edtBaseINSS, edtBaseIRPF, edtValINSS, edtValIRPF, edtDedu, edtSalLiqui;
     Button btnGraf;
 
+    //variaveis do INSS
     double SalaBruto = 0;
     double Aliq = 0;
     double BaseInss = 0;
     double ValorInss = 0;
+    //------------------
+
+    //variaveis do IRPF
+    double AliqIRPF = 0;
+    double qtDep = 0;
+    double BaseIrpf = 0;
+    double deduc = 0;
+
+    //-----------------
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         InitComponents();
+        //salario bruto
         edtSalBruto.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -39,6 +52,25 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
                 SalaBruto = Double.parseDouble(editable.toString());
                 INSS();
+            }
+        });
+
+        // numero de dependentes
+
+        editDep.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
 
@@ -76,6 +108,34 @@ public class MainActivity extends AppCompatActivity {
         editDescINSS.setText(String.format("%.2f", Aliq));  //mostra na tela o valor da Aliq
         edtBaseINSS.setText(String.format("%.2f", BaseInss)); // mostra na tela o valor de BaseInss
         edtValINSS.setText(String.format("%.2f", ValorInss)); // mostra na tela o valor de ValorInss
+
+
+    }
+
+    public void IRPF(){
+
+        BaseIrpf = (SalaBruto - ValorInss -(qtDep * 189.59));
+
+        if (BaseIrpf < 1903.98){
+            AliqIRPF = 0;
+            deduc = 0;
+        } else if(BaseIrpf >1903.98 && BaseIrpf <= 2826.05){
+            AliqIRPF = 0.075;
+            deduc = 142.80;
+
+
+        } else if( BaseIrpf >2836.05 && BaseIrpf <= 3751.05) {
+            AliqIRPF = 0.15;
+            deduc = 354.80;
+
+        } else if (BaseIrpf > 3751.05 && BaseIrpf <= 4664.08){
+            AliqIRPF = 0.225;
+            deduc = 636.13;
+        } else {
+            AliqIRPF = 0.275;
+            deduc = 869.36;
+        }
+
 
 
     }

@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     double qtDep = 0;
     double BaseIrpf = 0;
     double deduc = 0;
+    double ValorIRPF = 0;
+    double SalaLiqui = 0;
 
     //-----------------
 
@@ -135,6 +137,18 @@ public class MainActivity extends AppCompatActivity {
             AliqIRPF = 0.275;
             deduc = 869.36;
         }
+
+        ValorIRPF = (BaseIrpf * AliqIRPF) - deduc; // valor do IRPF
+
+        SalaLiqui = SalaBruto - ValorInss - ValorIRPF; // Valor do Salario Liquido
+
+
+        edtAliIRPF.setText(String.format("%.2f",AliqIRPF));
+        edtBaseIRPF.setText(String.format("%.2f",BaseIrpf));
+        edtValIRPF.setText(String.format("%,2f",ValorIRPF));
+        edtDedu.setText(String.format("%.2f",deduc));
+        edtSalLiqui.setText(String.format("%.2f",SalaLiqui));
+
 
 
 

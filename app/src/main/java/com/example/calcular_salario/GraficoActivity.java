@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
@@ -54,6 +55,10 @@ public class GraficoActivity extends AppCompatActivity {
         valores.add( new PieEntry(sal_liqui, "% Salario Liquido"));
         valores.add( new PieEntry(inss, "% INSS"));
         valores.add( new PieEntry(irpf, "% IRPF"));
+
+        // animação
+
+        myChart.animateY(2000, Easing.EaseInOutCubic);
 
 
 

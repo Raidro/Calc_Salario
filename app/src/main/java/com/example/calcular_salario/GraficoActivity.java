@@ -41,6 +41,8 @@ public class GraficoActivity extends AppCompatActivity {
         irpf = param.getFloat("IRPF");
 
 
+        //definição de configurações do grafico e do burado do meio dele
+
         myChart.setUsePercentValues(true);
         myChart.setExtraOffsets(5, 10, 5, 5);
         myChart.setDrawHoleEnabled(true);
@@ -50,8 +52,10 @@ public class GraficoActivity extends AppCompatActivity {
 
         //cor e fontes
 
-        myChart.setEntryLabelColor(Color.DKGRAY);
-        myChart.setCenterTextSize(18f);
+        myChart.setEntryLabelColor(Color.BLACK);
+        myChart.setCenterTextSize(20f);
+
+        //valores que irão aparecer na parte de baixo
 
         valores.add(new PieEntry(sal_liqui, "% Salario Liquido"));
         valores.add(new PieEntry(inss, "% INSS"));
@@ -68,7 +72,7 @@ public class GraficoActivity extends AppCompatActivity {
         //dados a serem setados
 
         dados = new PieData(dataSet1);
-        dados.setValueTextSize(18f);
+        dados.setValueTextSize(32f);
         dados.setValueTextColor(Color.RED);
         myChart.setData(dados);
 

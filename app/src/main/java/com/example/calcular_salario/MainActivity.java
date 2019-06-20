@@ -168,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
         float sal_liqui = 0, inss = 0, irpf = 0;
 
         try {
+            //trasforma os valores em float
 
             sal_liqui = Float.parseFloat(edtSalLiqui.getText().toString());
             inss = Float.parseFloat(edtValINSS.getText().toString());

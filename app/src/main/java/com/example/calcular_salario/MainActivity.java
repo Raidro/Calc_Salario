@@ -1,5 +1,6 @@
 package com.example.calcular_salario;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,8 +55,12 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+
+
                 SalaBruto = Double.parseDouble(editable.toString());
                 INSS();
+
+
             }
         });
 
@@ -81,8 +87,23 @@ public class MainActivity extends AppCompatActivity {
         btnGraf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gerarGrafico();
+
+                String edtSB = edtSalBruto.getText().toString();
+                String edtDep = editDep.getText().toString();
+
+                //se os valores forem 0 ou nulo ele vai da uma msg de erro dizendo que 'obrigatorio que tenham valores acima de 0
+                if (edtSB == null && edtDep == null || edtSB.equals("") && edtDep.equals("")) {
+
+                    edtSalBruto.setError("Campo Obrigatorio!"); //msg de erro
+                    editDep.setError("Campo Obrigatorio!"); //msg de erro
+
+                } else {
+
+                    gerarGrafico(); // gera o grafico, se não tiver erro (no caso, valores acima de 1)
+                }
+                //aqui termina o if
             }
+
         });
 
     }
@@ -116,11 +137,11 @@ public class MainActivity extends AppCompatActivity {
         ValorInss = Aliq * BaseInss;
 
 
-        editDescINSS.setText(String.format("%.2f", Aliq * 100) + " %");  //mostra na tela o valor da Aliq
+        editDescINSS.setText(String.format("%.2f", Aliq * 100) + " %");  //mostra na tela o valor da Aliq e multiplica por 100 pra dar o valor em %
 
-        edtBaseINSS.setText(String.format("%.2f", BaseInss)) ; // mostra na tela o valor de BaseInss
+        edtBaseINSS.setText(String.format("%.2f", BaseInss)); // mostra na tela o valor de BaseInss
         edtValINSS.setText(String.format("%.2f", ValorInss)); // mostra na tela o valor de ValorInss
-
+        // até duas casas decimais
         edtBaseINSS.setText(String.format("%.2f", BaseInss)); // mostra na tela o valor de BaseInss
         edtValINSS.setText(String.format("%.2f", ValorInss)); // mostra na tela o valor de ValorInss
 
@@ -129,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void IRPF() {
 
+        //calculo da base do irpf
         BaseIrpf = (SalaBruto - ValorInss - (qtDep * 189.59));
 
         if (BaseIrpf < 1903.98) {
@@ -156,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         SalaLiqui = SalaBruto - ValorInss - ValorIRPF; // Valor do Salario Liquido
 
 
-        edtAliIRPF.setText(String.format("%.3f", AliqIRPF * 100) + " %");
+        edtAliIRPF.setText(String.format("%.3f", AliqIRPF * 100) + " %");  //multiplico por 100 pra dar o valor em %, e aceito até 3 casas decimais
 
         edtBaseIRPF.setText(String.format("%.2f", BaseIrpf));
         edtValIRPF.setText(String.format("%.2f", ValorIRPF));
@@ -177,7 +199,8 @@ public class MainActivity extends AppCompatActivity {
 
         float sal_liqui = 0, inss = 0, irpf = 0;
 
-        try { // exection
+        try {
+            // exection
             //trasforma os valores em float
 
             sal_liqui = Float.parseFloat(edtSalLiqui.getText().toString());
@@ -191,16 +214,17 @@ public class MainActivity extends AppCompatActivity {
 
         // enviando os dados para o grafico
 
-        Intent grafico = new Intent(MainActivity.this, GraficoActivity.class);
+        Intent grafico = new Intent(MainActivity.this, GraficoActivity.class); // está pegando a referencia da segunda activity, no caso do grafico
         grafico.putExtra("Salario", sal_liqui);
         grafico.putExtra("INSS", inss);
         grafico.putExtra("IRPF", irpf);
-        startActivity(grafico);
+        startActivity(grafico); // inicia a activity do grafico
 
 
     }
 
     public void InitComponents() {
+
         // inicia os componentes criados
 
         edtSalBruto = (EditText) findViewById(R.id.edtSalBruto);

@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:text="Salario Bruto:"
         android:textSize="18sp"
@@ -21,7 +21,7 @@
     <EditText
         android:id="@+id/edtSalBruto"
         android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -35,7 +35,7 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:text="Dependentes:"
         android:textSize="18sp"
@@ -47,7 +47,7 @@
     <EditText
         android:id="@+id/editDep"
         android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
@@ -60,7 +60,7 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:text="Aliquota do INSS:"
         android:textSize="18sp"
@@ -72,7 +72,7 @@
     <EditText
         android:id="@+id/editDescINSS"
         android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:editable="false"
         android:ems="10"
@@ -87,7 +87,7 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="40dp"
         android:text="Base INSS:"
         android:textSize="18sp"
@@ -98,7 +98,7 @@
     <EditText
         android:id="@+id/edtBaseINSS"
         android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:editable="false"
         android:ems="10"
@@ -113,7 +113,7 @@
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:text="Valor INSS:"
         android:textSize="18sp"
@@ -124,7 +124,7 @@
     <EditText
         android:id="@+id/edtValINSS"
         android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:editable="false"
         android:ems="10"
@@ -139,7 +139,7 @@
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:text="Base IRPF:"
         android:textSize="18sp"
@@ -150,7 +150,7 @@
     <EditText
         android:id="@+id/edtBaseIRPF"
         android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:editable="false"
         android:ems="10"
@@ -165,7 +165,7 @@
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:text="Aliquota do IRPF:"
         android:textSize="18sp"
@@ -177,7 +177,7 @@
     <EditText
         android:id="@+id/edtAliIRPF"
         android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:editable="false"
         android:ems="10"
@@ -202,7 +202,7 @@
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:text="Valor do IRPF:"
         android:textSize="18sp"
@@ -229,7 +229,7 @@
     <EditText
         android:id="@+id/edtValIRPF"
         android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:editable="false"
         android:ems="10"

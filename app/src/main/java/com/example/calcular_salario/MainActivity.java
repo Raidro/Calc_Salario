@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         ValorInss = Aliq * BaseInss;
 
 
-        editDescINSS.setText(String.format("%.2f", Aliq));  //mostra na tela o valor da Aliq
+        editDescINSS.setText(String.format("%.2f", Aliq*100));  //mostra na tela o valor da Aliq
         edtBaseINSS.setText(String.format("%.2f", BaseInss)); // mostra na tela o valor de BaseInss
         edtValINSS.setText(String.format("%.2f", ValorInss)); // mostra na tela o valor de ValorInss
 
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         SalaLiqui = SalaBruto - ValorInss - ValorIRPF; // Valor do Salario Liquido
 
 
-        edtAliIRPF.setText(String.format("%.3f", AliqIRPF));
+        edtAliIRPF.setText(String.format("%.3f", AliqIRPF*100));
         edtBaseIRPF.setText(String.format("%.2f", BaseIrpf));
         edtValIRPF.setText(String.format("%.2f", ValorIRPF));
         edtDedu.setText(String.format("%.2f", deduc));

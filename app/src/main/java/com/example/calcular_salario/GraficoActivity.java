@@ -53,9 +53,9 @@ public class GraficoActivity extends AppCompatActivity {
         myChart.setEntryLabelColor(Color.DKGRAY);
         myChart.setCenterTextSize(18f);
 
-        valores.add( new PieEntry(sal_liqui, "% Salario Liquido"));
-        valores.add( new PieEntry(inss, "% INSS"));
-        valores.add( new PieEntry(irpf, "% IRPF"));
+        valores.add(new PieEntry(sal_liqui, "% Salario Liquido"));
+        valores.add(new PieEntry(inss, "% INSS"));
+        valores.add(new PieEntry(irpf, "% IRPF"));
 
         // animação
 

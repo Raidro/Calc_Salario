@@ -2,9 +2,11 @@ package com.example.calcular_salario;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -76,6 +78,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnGraf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gerarGrafico();
+            }
+        });
+
     }
 
     public void INSS() {
@@ -107,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         ValorInss = Aliq * BaseInss;
 
 
-        editDescINSS.setText(String.format("%.2f", Aliq*100) + " %");  //mostra na tela o valor da Aliq
+        editDescINSS.setText(String.format("%.2f", Aliq * 100) + " %");  //mostra na tela o valor da Aliq
         edtBaseINSS.setText(String.format("%.2f", BaseInss)); // mostra na tela o valor de BaseInss
         edtValINSS.setText(String.format("%.2f", ValorInss)); // mostra na tela o valor de ValorInss
 
@@ -143,11 +152,37 @@ public class MainActivity extends AppCompatActivity {
         SalaLiqui = SalaBruto - ValorInss - ValorIRPF; // Valor do Salario Liquido
 
 
-        edtAliIRPF.setText(String.format("%.3f", AliqIRPF*100)+ " %");
+        edtAliIRPF.setText(String.format("%.3f", AliqIRPF * 100) + " %");
         edtBaseIRPF.setText(String.format("%.2f", BaseIrpf));
         edtValIRPF.setText(String.format("%.2f", ValorIRPF));
         edtDedu.setText(String.format("%.2f", deduc));
         edtSalLiqui.setText(String.format("%.2f", SalaLiqui));
+
+
+    }
+
+    public void gerarGrafico() {
+
+        // converter e pegar os valores de salario liquido, inss e irpf
+
+        float sal_liqui = 0, inss = 0, irpf = 0;
+
+        try {
+
+            sal_liqui = Float.parseFloat(edtSalLiqui.getText().toString());
+            inss = Float.parseFloat(edtValINSS.getText().toString());
+            irpf = Float.parseFloat(edtValIRPF.getText().toString());
+
+
+        } catch (Exception e) {
+
+        }
+
+        Intent grafico = new Intent(MainActivity.this, GraficoActivity.class);
+        grafico.putExtra("Salario", sal_liqui);
+        grafico.putExtra("INSS", inss);
+        grafico.putExtra("IRPF", irpf);
+        startActivity(grafico);
 
 
     }

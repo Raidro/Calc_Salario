@@ -1,6 +1,6 @@
 package com.example.calcular_salario;
 
-import androidx.appcompat.app.AlertDialog;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;

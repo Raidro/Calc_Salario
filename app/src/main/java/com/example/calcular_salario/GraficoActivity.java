@@ -18,6 +18,7 @@ import java.util.List;
 
 public class GraficoActivity extends AppCompatActivity {
 
+    //classe que inicia as variaveis necessarias para criar o grafico
     private PieChart myChart;
     List<PieEntry> valores = new ArrayList<>();
     PieDataSet dataSet1;
@@ -36,6 +37,8 @@ public class GraficoActivity extends AppCompatActivity {
         Bundle param = getIntent().getExtras();
 
         float sal_liqui, inss, irpf;
+
+        //definindo os parametros
 
         sal_liqui = param.getFloat("Salario");
         inss = param.getFloat("INSS");
@@ -58,19 +61,19 @@ public class GraficoActivity extends AppCompatActivity {
 
         //valores que irão aparecer na parte de baixo
 
-        valores.add(new PieEntry(sal_liqui, "% Salario Liquido"));
+        valores.add(new PieEntry(sal_liqui, "% Salario Liquido"));  // texto qque irá ser mostrado
         valores.add(new PieEntry(inss, "% INSS"));
         valores.add(new PieEntry(irpf, "% IRPF"));
 
-        // animação
+        // animação do grafico
 
         myChart.animateY(2000, Easing.EaseInOutCubic);
 
         dataSet1 = new PieDataSet(valores, "Resultado");
-        dataSet1.setColors(ColorTemplate.PASTEL_COLORS);
-        dataSet1.setSliceSpace(6f);
+        dataSet1.setColors(ColorTemplate.PASTEL_COLORS); // cor do resultados
+        dataSet1.setSliceSpace(6f); // tamanho dos espaços entre os pedaços
 
-        //dados a serem setados
+        //dados a serem setados e enviados para o grafico
 
         dados = new PieData(dataSet1);
         dados.setValueTextSize(32f);

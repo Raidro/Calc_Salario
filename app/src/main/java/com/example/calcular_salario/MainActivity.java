@@ -10,28 +10,28 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
 
+    //definindo tudo que é editText e Button
     EditText edtSalBruto, editDep, editDescINSS, edtAliIRPF, edtBaseINSS, edtBaseIRPF, edtValINSS, edtValIRPF, edtDedu, edtSalLiqui;
     Button btnGraf;
 
-    //variaveis do INSS
+    //variaveis globais do INSS
     double SalaBruto = 0;
     double Aliq = 0;
     double BaseInss = 0;
     double ValorInss = 0;
     //------------------
 
-    //variaveis do IRPF
+    //variaveis globais do IRPF
     double AliqIRPF = 0;
     double qtDep = 0;
     double BaseIrpf = 0;
     double deduc = 0;
     double ValorIRPF = 0;
     double SalaLiqui = 0;
-
     //-----------------
 
 
@@ -40,8 +40,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        InitComponents();
+        InitComponents(); // inicia os componentes chamando a função initcomponents
         //salario bruto
+        // fica verificando se ouve mudança no editDep
         edtSalBruto.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-
+                //apos a mudanã, realiza os 2 comandos, pegando oque foi escrito e iniciando a função INSS
 
                 SalaBruto = Double.parseDouble(editable.toString());
                 INSS();
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // numero de dependentes
-
+        // fica verificando se ouve mudança no editDep
         editDep.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                //apos a mudanã, realiza os 2 comandos, pegando oque foi escrito e iniciando a função IRPF
                 qtDep = Double.parseDouble(editable.toString());
                 IRPF();
             }

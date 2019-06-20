@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
         editDescINSS.setText(String.format("%.2f", Aliq * 100) + " %");  //mostra na tela o valor da Aliq
 
-        edtBaseINSS.setText(String.format("%.2f", BaseInss)); // mostra na tela o valor de BaseInss
+        edtBaseINSS.setText(String.format("%.2f", BaseInss)) ; // mostra na tela o valor de BaseInss
         edtValINSS.setText(String.format("%.2f", ValorInss)); // mostra na tela o valor de ValorInss
 
         edtBaseINSS.setText(String.format("%.2f", BaseInss)); // mostra na tela o valor de BaseInss

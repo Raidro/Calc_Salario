@@ -153,10 +153,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         edtAliIRPF.setText(String.format("%.3f", AliqIRPF * 100) + " %");
-        edtBaseIRPF.setText(String.format("%.2f", BaseIrpf));
-        edtValIRPF.setText(String.format("%.2f", ValorIRPF));
-        edtDedu.setText(String.format("%.2f", deduc));
-        edtSalLiqui.setText(String.format("%.2f", SalaLiqui));
+        edtBaseIRPF.setText("R$ "+ String.format("%.2f", BaseIrpf));
+        edtValIRPF.setText("R$ "+ String.format("%.2f", ValorIRPF));
+        edtDedu.setText("R$ "+ String.format("%.2f", deduc));
+        edtSalLiqui.setText("R$ "+ String.format("%.2f", SalaLiqui));
 
 
     }
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
 
         float sal_liqui = 0, inss = 0, irpf = 0;
 
-        try {
+        try { // exection
             //trasforma os valores em float
 
             sal_liqui = Float.parseFloat(edtSalLiqui.getText().toString());
@@ -187,7 +187,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
 
     public void InitComponents() {
         // inicia os componentes criados

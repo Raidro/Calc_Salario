@@ -117,8 +117,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         editDescINSS.setText(String.format("%.2f", Aliq * 100) + " %");  //mostra na tela o valor da Aliq
-        edtBaseINSS.setText(String.format("%.2f", BaseInss)); // mostra na tela o valor de BaseInss
-        edtValINSS.setText(String.format("%.2f", ValorInss)); // mostra na tela o valor de ValorInss
+        edtBaseINSS.setText("R$ " + String.format("%.2f", BaseInss)); // mostra na tela o valor de BaseInss
+        edtValINSS.setText("R$ " + String.format("%.2f", ValorInss)); // mostra na tela o valor de ValorInss
 
 
     }
@@ -153,10 +153,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         edtAliIRPF.setText(String.format("%.3f", AliqIRPF * 100) + " %");
-        edtBaseIRPF.setText("R$ "+ String.format("%.2f", BaseIrpf));
-        edtValIRPF.setText("R$ "+ String.format("%.2f", ValorIRPF));
-        edtDedu.setText("R$ "+ String.format("%.2f", deduc));
-        edtSalLiqui.setText("R$ "+ String.format("%.2f", SalaLiqui));
+        edtBaseIRPF.setText("R$ " + String.format("%.2f", BaseIrpf));
+        edtValIRPF.setText("R$ " + String.format("%.2f", ValorIRPF));
+        edtDedu.setText("R$ " + String.format("%.2f", deduc));
+        edtSalLiqui.setText("R$ " + String.format("%.2f", SalaLiqui));
 
 
     }
@@ -178,6 +178,8 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
 
         }
+
+        // enviando os dados para o grafico
 
         Intent grafico = new Intent(MainActivity.this, GraficoActivity.class);
         grafico.putExtra("Salario", sal_liqui);

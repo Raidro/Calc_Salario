@@ -10,6 +10,7 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +61,16 @@ public class GraficoActivity extends AppCompatActivity {
 
         myChart.animateY(2000, Easing.EaseInOutCubic);
 
+        dataSet1 = new PieDataSet(valores, "Resultado");
+        dataSet1.setColors(ColorTemplate.PASTEL_COLORS);
+        dataSet1.setSliceSpace(6f);
+
+        //dados a serem setados
+
+        dados = new PieData(dataSet1);
+        dados.setValueTextSize(18f);
+        dados.setValueTextColor(Color.RED);
+        myChart.setData(dados);
 
 
     }

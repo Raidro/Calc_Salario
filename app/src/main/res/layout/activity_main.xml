@@ -24,9 +24,11 @@
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="0.0"
         android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/editDep"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -189,7 +191,7 @@
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:text="Dedução:"
         android:textSize="18sp"
@@ -211,7 +213,7 @@
     <EditText
         android:id="@+id/edtDedu"
         android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -241,7 +243,8 @@
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:text="Salario Liquido:"
         android:textSize="18sp"
@@ -253,7 +256,7 @@
     <EditText
         android:id="@+id/edtSalLiqui"
         android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:editable="false"
         android:ems="10"
@@ -268,7 +271,7 @@
     <Button
         android:id="@+id/btnGraf"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:layout_marginTop="66dp"
         android:text="Ver Grafico"
         app:layout_constraintEnd_toEndOf="@+id/edtDedu"

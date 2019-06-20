@@ -34,7 +34,7 @@ public class GraficoActivity extends AppCompatActivity {
 
         float sal_liqui, inss, irpf;
 
-        sal_liqui = param.getFloat("Salario Liquido");
+        sal_liqui = param.getFloat("Salario");
         inss = param.getFloat("INSS");
         irpf = param.getFloat("IRPF");
 
@@ -45,6 +45,15 @@ public class GraficoActivity extends AppCompatActivity {
         myChart.setHoleColor(Color.WHITE);
         myChart.setTransparentCircleRadius(31f);
         myChart.setHoleRadius(20f);
+
+        //cor e fontes
+
+        myChart.setEntryLabelColor(Color.DKGRAY);
+        myChart.setCenterTextSize(18f);
+
+        valores.add( new PieEntry(sal_liqui, "% Salario Liquido"));
+        valores.add( new PieEntry(inss, "% INSS"));
+        valores.add( new PieEntry(irpf, "% IRPF"));
 
 
 

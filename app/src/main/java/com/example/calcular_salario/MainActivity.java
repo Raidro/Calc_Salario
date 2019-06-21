@@ -3,6 +3,7 @@ package com.example.calcular_salario;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -110,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("DefaultLocale")
     public void INSS() {
 
 

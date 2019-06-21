@@ -157,12 +157,10 @@
 
     <Button
         android:id="@+id/btnGraf"
-        android:layout_width="200dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="219dp"
         android:text="Ver Grafico"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/edtValIRPF"
         app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="@+id/edtValIRPF"

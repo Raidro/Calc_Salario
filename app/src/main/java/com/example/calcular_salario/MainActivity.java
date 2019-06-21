@@ -217,6 +217,7 @@ public class MainActivity extends AppCompatActivity {
 
         } catch (Exception e) {
 
+
         }
 
         // enviando os dados para o grafico

@@ -206,10 +206,13 @@ public class MainActivity extends AppCompatActivity {
         try {
             // exection
             //trasforma os valores em float
+            //sal_liqui = Float.parseFloat(edtSalLiqui.getText().toString());
+            //inss = Float.parseFloat(edtValINSS.getText().toString());
+            //irpf = Float.parseFloat(edtValIRPF.getText().toString());
 
-            sal_liqui = Float.parseFloat(edtSalLiqui.getText().toString());
-            inss = Float.parseFloat(edtValINSS.getText().toString());
-            irpf = Float.parseFloat(edtValIRPF.getText().toString());
+            sal_liqui = (float) SalaLiqui; // valor de salario liquido armazenado em sal_liqui;
+            inss = (float) ValorInss; // valor do inss armazenado em inss;
+            irpf = (float) ValorIRPF; // valor do irpf armazenado em irpf;
 
 
         } catch (Exception e) {
